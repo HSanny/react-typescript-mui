@@ -29,8 +29,8 @@ const data = {
   addressLine1: "No 18",
   addressLine2: "Jalan 18, TAMAN 18",
   addressLine3: "56100",
-  addressLine4: "KUALA LUMPUR",
-};
+    addressLine4: "KUALA LUMPUR",
+  };
 
 export const Footer: FC = (): ReactElement => {
   return (
