@@ -54,19 +54,19 @@ const homeMenuItems: Description[] = [
     items: [
       {
         name: 'Level 2',
-        link: '/level-2',
+        link: '/nested-pages/level-2',
       },
       {
         name: 'Level 2',
-        link: '/level-2-nested',
+        link: '/nested-pages/level-2-nested',
         items: [
           {
             name: 'Level 3',
-            link: '/level-2-nested/level-3-1',
+            link: '/nested-pages/level-2-nested/level-3-1',
           },
           {
             name: 'Level 3',
-            link: '/level-2-nested/level-3-2',
+            link: '/nested-pages/level-2-nested/level-3-2',
           },
         ],
       },

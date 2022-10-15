@@ -13,6 +13,7 @@ const PageDashboard = () => <Typography variant="h3" component="h1">Dashboard Pa
 const PageOrders = () => <Typography variant="h3" component="h1">Orders Page</Typography>
 const PageCustomers = () => <Typography variant="h3" component="h1">Customers Page</Typography>
 const PageReports = () => <Typography variant="h3" component="h1">Reports Page</Typography>
+const PageNested = () => <Typography variant="h3" component="h1">Nested Pages</Typography>
 
 const drawerWidth = 240
 
@@ -43,16 +44,6 @@ const useStyles = makeStyles(theme => ({
 const Home: FC<any> = (): ReactElement => {
   const classes = useStyles();
   return (
-    <Box
-      sx={{
-        flexGrow: 1,
-        backgroundColor: "whitesmoke",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Typography variant="h3">Home</Typography>
       <BrowserRouter>
       <div className={clsx('App', classes.root)}>
         <CssBaseline />
@@ -72,13 +63,13 @@ const Home: FC<any> = (): ReactElement => {
               <Route path="/orders" component={PageOrders} />
               <Route path="/customers" component={PageCustomers} />
               <Route path="/reports" component={PageReports} />
+              <Route path="/nested-pages" component={PageNested}/>
             </Switch>
 
           </Container>
         </main>
       </div>
     </BrowserRouter>
-    </Box>
   );
 };
 

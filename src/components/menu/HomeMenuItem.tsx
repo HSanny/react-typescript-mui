@@ -13,6 +13,8 @@ import IconExpandLess from '@material-ui/icons/ExpandLess'
 import IconExpandMore from '@material-ui/icons/ExpandMore'
 
 import HomeMenuItemComponent from './HomeMenuItemComponent'
+import { json } from 'stream/consumers'
+import { Icon, ListItemIcon } from '@mui/material'
 // import { SvgIconProps } from '@mui/material'
 
 // React runtime PropTypes
@@ -44,22 +46,25 @@ const HomeMenuItem: React.FC<HomeMenuItemProps> = props => {
   const classes = useStyles()
   const isExpandable = items && items.length > 0
   const [open, setOpen] = React.useState(false)
-
+  console.log('item list', items);
+  console.log('isExpandable', isExpandable);
+  console.log('open', open);
   function handleClick() {
+    console.log('clicking');
     setOpen(!open)
   }
 
   const MenuItemRoot = (
     <HomeMenuItemComponent className={classes.menuItem} link={link} onClick={handleClick}>
       {/* Display an icon if any */}
-      {/* {!!Icon && (
+      {!!Icon && (
         <ListItemIcon className={classes.menuItemIcon}>
           <Icon />
         </ListItemIcon>
-      )} */}
+      )}
       <ListItemText
         primary={name}
-        // inset={!Icon}
+        inset={!Icon}
       />
       {/* Display the expand menu if the item has children */}
       {isExpandable && !open && <IconExpandMore />}

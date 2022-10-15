@@ -58,20 +58,12 @@ const Navbar: FC = (): ReactElement => {
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
+              anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
               keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
+              transformOrigin={{ vertical: "top", horizontal: "left" }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
+              sx={{ display: { xs: "block", md: "none" } }}
             >
               {routes.map((page) => (
                 <Link
@@ -81,9 +73,10 @@ const Navbar: FC = (): ReactElement => {
                   color="black"
                   underline="none"
                   variant="button"
+                  sx={{ margin: '15px' }}
                 >
                   <MenuItem onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page.title}</Typography>
+                    <Typography textAlign="center" sx = {{ margin:'15px'}}>{page.title}</Typography>
                   </MenuItem>
                 </Link>
               ))}
@@ -115,7 +108,7 @@ const Navbar: FC = (): ReactElement => {
                   color="black"
                   underline="none"
                   variant="button"
-                  sx={{ fontSize: "large", marginLeft: "2rem" }}
+                  sx={{ fontSize: "large", marginLeft: "2rem", margin: "15px" }}
                 >
                   {page.title}
                 </Link>

@@ -10,9 +10,12 @@ export interface HomeMenuItemComponentProps {
 
 const HomeMenuItemComponent: React.FC<HomeMenuItemComponentProps> = props => {
   const { className, onClick, link, children } = props
-
+  console.log("onclick", onClick);
+  console.log('link', link);
+  console.log('typeof link', typeof link);
   // If link is not set return the orinary ListItem
   if (!link || typeof link !== 'string') {
+    console.log('first return');
     return (
       <ListItem
         button
@@ -31,6 +34,7 @@ const HomeMenuItemComponent: React.FC<HomeMenuItemComponentProps> = props => {
       children={children}
       component={forwardRef((props: NavLinkProps, ref: any) => <NavLink exact {...props} innerRef={ref} />)}
       to={link}
+      onClick={onClick}
     />
   )
 }
